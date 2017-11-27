@@ -1,0 +1,15 @@
+default:
+  suites:
+    my_suite:
+      services: "@my_container"
+      contexts:
+        - Lcobucci\DependencyInjection\Behat\Tests\Sample:
+          - "@service_container"
+
+  extensions:
+    Lcobucci\DependencyInjection\Behat\BuilderExtension:
+      name: "my_container"
+      container_builder: "config/container_builder.php"
+      packages:
+        Lcobucci\DependencyInjection\Behat\Tests\Package:
+          - "you"

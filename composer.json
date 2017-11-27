@@ -1,0 +1,41 @@
+{
+    "name": "lcobucci/behat-di-builder-extension",
+    "description": "A behat extension that allows injecting services from a container created with lcobucci/di-builder in contexts",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luís Cobucci",
+            "email": "lcobucci@gmail.com"
+        }
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.1",
+        "behat/behat": "^3.4",
+        "lcobucci/di-builder": "^5.3"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.8",
+        "phpunit/phpunit": "^6.3",
+        "squizlabs/php_codesniffer": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lcobucci\\DependencyInjection\\Behat\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lcobucci\\DependencyInjection\\Behat\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
