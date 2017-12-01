@@ -97,6 +97,8 @@ final class BuilderExtensionTest extends \PHPUnit\Framework\TestCase
         self::assertSame([ContainerFactory::class, 'createContainer'], $definition->getFactory());
         self::assertSame([Package::class => 'test'], $definition->getArgument(0));
         self::assertSame('a-file.php', $definition->getArgument(1));
+        self::assertTrue($definition->isPublic());
+        self::assertFalse($definition->isPrivate());
         self::assertFalse($definition->isShared());
     }
 }

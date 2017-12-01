@@ -57,6 +57,7 @@ final class BuilderExtension implements Extension
         $definition->setFactory([ContainerFactory::class, 'createContainer']);
         $definition->addTag('helper_container.container');
         $definition->setShared(false);
+        $definition->setPublic(true);
 
         return $definition;
     }
