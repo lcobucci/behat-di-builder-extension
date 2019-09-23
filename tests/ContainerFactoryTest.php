@@ -3,13 +3,15 @@ declare(strict_types=1);
 
 namespace Lcobucci\DependencyInjection\Behat\Tests;
 
-use Lcobucci\DependencyInjection\Behat\ContainerBuildingException;
+use Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt;
 use Lcobucci\DependencyInjection\Behat\ContainerFactory;
-use Symfony\Component\DependencyInjection\Container;
+use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerInterface as SFContainer;
+use function dirname;
 
-final class ContainerFactoryTest extends \PHPUnit\Framework\TestCase
+final class ContainerFactoryTest extends TestCase
 {
     /**
      * @before
@@ -61,11 +63,11 @@ final class ContainerFactoryTest extends \PHPUnit\Framework\TestCase
      * @test
      *
      * @covers \Lcobucci\DependencyInjection\Behat\ContainerFactory
-     * @covers \Lcobucci\DependencyInjection\Behat\ContainerBuildingException
+     * @covers \Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt
      */
     public function createContainerShouldThownAnExceptionWhenPackageListHasInvalidClasses(): void
     {
-        $this->expectException(ContainerBuildingException::class);
+        $this->expectException(ContainerCannotBeBuilt::class);
         $this->expectExceptionMessage('The package class "' . Test::class . '" could not be loaded, is it correct?');
 
         ContainerFactory::createContainer([Test::class => []]);
@@ -75,13 +77,13 @@ final class ContainerFactoryTest extends \PHPUnit\Framework\TestCase
      * @test
      *
      * @covers \Lcobucci\DependencyInjection\Behat\ContainerFactory
-     * @covers \Lcobucci\DependencyInjection\Behat\ContainerBuildingException
+     * @covers \Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt
      */
     public function createContainerShouldThownAnExceptionBuilderFileIsNotReadable(): void
     {
         $file = __DIR__ . '/test.php';
 
-        $this->expectException(ContainerBuildingException::class);
+        $this->expectException(ContainerCannotBeBuilt::class);
         $this->expectExceptionMessage('The file "' . $file . '" is not readable, is this the correct path?');
 
         ContainerFactory::createContainer([], $file);

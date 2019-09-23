@@ -3,7 +3,10 @@ declare(strict_types=1);
 
 namespace Lcobucci\DependencyInjection\Behat;
 
-final class ContainerBuildingException extends \RuntimeException
+use RuntimeException;
+use function sprintf;
+
+final class ContainerCannotBeBuilt extends RuntimeException
 {
     public static function nonReadableFile(string $filename): self
     {

@@ -12,20 +12,20 @@ use Symfony\Component\DependencyInjection\Definition;
 
 final class BuilderExtension implements Extension
 {
-    public function process(ContainerBuilder $container) : void
+    public function process(ContainerBuilder $container): void
     {
     }
 
-    public function getConfigKey() : string
+    public function getConfigKey(): string
     {
         return __NAMESPACE__;
     }
 
-    public function initialize(ExtensionManager $extensionManager) : void
+    public function initialize(ExtensionManager $extensionManager): void
     {
     }
 
-    public function configure(ArrayNodeDefinition $builder) : void
+    public function configure(ArrayNodeDefinition $builder): void
     {
         $builder
             ->children()
@@ -42,7 +42,8 @@ final class BuilderExtension implements Extension
         ->end();
     }
 
-    public function load(ContainerBuilder $container, array $config) : void
+    /** @inheritDoc */
+    public function load(ContainerBuilder $container, array $config): void
     {
         $container->setDefinition(
             $config['name'],
@@ -50,6 +51,9 @@ final class BuilderExtension implements Extension
         );
     }
 
+    /**
+     * @param array<string, mixed> $packages
+     */
     private function createContainerDefinition(array $packages, ?string $builderFile = null): Definition
     {
         $definition = new Definition(ContainerInterface::class, [$packages, $builderFile]);

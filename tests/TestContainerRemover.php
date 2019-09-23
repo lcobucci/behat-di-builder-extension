@@ -5,7 +5,10 @@ namespace Lcobucci\DependencyInjection\Behat\Tests;
 
 use function dirname;
 use function file_exists;
+use function glob;
 use function is_dir;
+use function rmdir;
+use function unlink;
 
 final class TestContainerRemover
 {
