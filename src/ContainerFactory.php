@@ -6,16 +6,21 @@ namespace Lcobucci\DependencyInjection\Behat;
 use Lcobucci\DependencyInjection\Builder;
 use Lcobucci\DependencyInjection\ContainerBuilder;
 use Psr\Container\ContainerInterface;
+use function class_exists;
+use function is_readable;
 
 final class ContainerFactory
 {
+    /**
+     * @param array<string, mixed> $packages
+     */
     public static function createContainer(array $packages, ?string $builderFile = null): ContainerInterface
     {
         $builder = self::createBuilder($builderFile);
 
         foreach ($packages as $package => $arguments) {
             if (! class_exists($package)) {
-                throw ContainerBuildingException::nonExistingPackage($package);
+                throw ContainerCannotBeBuilt::nonExistingPackage($package);
             }
 
             $builder->addPackage($package, $arguments);
@@ -31,7 +36,7 @@ final class ContainerFactory
         }
 
         if (! is_readable($builderFile)) {
-            throw ContainerBuildingException::nonReadableFile($builderFile);
+            throw ContainerCannotBeBuilt::nonReadableFile($builderFile);
         }
 
         return require $builderFile;

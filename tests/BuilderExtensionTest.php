@@ -6,12 +6,13 @@ namespace Lcobucci\DependencyInjection\Behat\Tests;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
 use Lcobucci\DependencyInjection\Behat\BuilderExtension;
 use Lcobucci\DependencyInjection\Behat\ContainerFactory;
+use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-final class BuilderExtensionTest extends \PHPUnit\Framework\TestCase
+final class BuilderExtensionTest extends TestCase
 {
     /**
      * @test
@@ -63,10 +64,10 @@ final class BuilderExtensionTest extends \PHPUnit\Framework\TestCase
     public function configureGenerateAValidConfiguration(): void
     {
         $extension   = new BuilderExtension();
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('root');
         $processor   = new Processor();
 
-        $extension->configure($treeBuilder->root('root'));
+        $extension->configure($treeBuilder->getRootNode());
 
         $config = $processor->process($treeBuilder->buildTree(), []);
 
@@ -85,7 +86,7 @@ final class BuilderExtensionTest extends \PHPUnit\Framework\TestCase
         $config    = [
             'name' => 'container',
             'container_builder' => 'a-file.php',
-            'packages' => [Package::class => 'test']
+            'packages' => [Package::class => 'test'],
         ];
 
         $extension = new BuilderExtension();

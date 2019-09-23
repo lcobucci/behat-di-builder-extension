@@ -3,8 +3,8 @@ sudo: false
 language: php
 
 php:
-  - 7.1
-  - 7.2
+  - 7.3
+  - 7.4snapshot
   - nightly
 
 cache:
@@ -19,13 +19,15 @@ install: travis_retry composer install
 
 script:
   - ./vendor/bin/phpunit
+  - ./vendor/bin/behat
 
 jobs:
   allow_failures:
     - php: nightly
 
   include:
-    - stage: Coverage
+    - stage: Metrics and quality
+      env: COVERAGE
       before_script:
         - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
         - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
@@ -35,14 +37,12 @@ jobs:
         - wget https://scrutinizer-ci.com/ocular.phar
         - php ocular.phar code-coverage:upload --format=php-clover ./clover.xml
 
-    - stage: Feature
-      script:
-        - ./vendor/bin/behat
-
-    - stage: Code standard
+    - stage: Metrics and quality
+      env: CODE_STANDARD
       script:
         - ./vendor/bin/phpcs
 
-    - stage: Static Analysis
+    - stage: Metrics and quality
+      env: STATIC_ANALYSIS
       script:
-        - ./vendor/bin/phpstan analyse -c phpstan.neon -l max src tests
+        - ./vendor/bin/phpstan analyse

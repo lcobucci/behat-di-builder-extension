@@ -1,0 +1,20 @@
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+    level: 7
+    paths:
+        - config
+        - src
+        - tests
+
+    ignoreErrors:
+        # Ignore symfony/config possible null values
+        - '#Cannot call method .*Node\(\) on .*|null#'
+        - '#expects Symfony\\.*\\ArrayNodeDefinition, Symfony\\.*\\ArrayNodeDefinition|Symfony\\.*\\NodeDefinition#'
+
+        # Ignore unexisting class used on purpose
+        - '#Lcobucci\\DependencyInjection\\Behat\\Tests\\Test#'

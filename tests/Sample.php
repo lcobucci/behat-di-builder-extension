@@ -3,10 +3,11 @@ declare(strict_types=1);
 
 namespace Lcobucci\DependencyInjection\Behat\Tests;
 
+use Behat\Behat\Context\Context;
 use PHPUnit\Framework\Assert;
 use Psr\Container\ContainerInterface;
 
-final class Sample implements \Behat\Behat\Context\Context
+final class Sample implements Context
 {
     /**
      * @var ContainerInterface
