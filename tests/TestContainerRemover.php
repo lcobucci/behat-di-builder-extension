@@ -3,9 +3,11 @@ declare(strict_types=1);
 
 namespace Lcobucci\DependencyInjection\Behat\Tests;
 
+use function assert;
 use function dirname;
 use function file_exists;
 use function glob;
+use function is_array;
 use function is_dir;
 use function rmdir;
 use function unlink;
@@ -25,7 +27,10 @@ final class TestContainerRemover
 
     private static function removeDir(string $dir): void
     {
-        foreach (glob($dir . '/*') as $path) {
+        $glob = glob($dir . '/*');
+        assert(is_array($glob));
+
+        foreach ($glob as $path) {
             if (is_dir($path)) {
                 self::removeDir($path);
                 continue;

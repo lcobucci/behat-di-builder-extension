@@ -29,7 +29,6 @@ final class ContainerFactoryTest extends TestCase
      */
     public function createContainerShouldBuildATestContainerWithOneServiceWhenNoPackageAndNoConfigFileIsGiven(): void
     {
-        /** @var Container $container */
         $container = ContainerFactory::createContainer([]);
 
         self::assertInstanceOf(Container::class, $container);

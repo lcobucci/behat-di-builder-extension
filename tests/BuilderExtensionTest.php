@@ -64,10 +64,10 @@ final class BuilderExtensionTest extends TestCase
     public function configureGenerateAValidConfiguration(): void
     {
         $extension   = new BuilderExtension();
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('root');
         $processor   = new Processor();
 
-        $extension->configure($treeBuilder->root('root'));
+        $extension->configure($treeBuilder->getRootNode());
 
         $config = $processor->process($treeBuilder->buildTree(), []);
 

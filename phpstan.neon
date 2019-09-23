@@ -1,9 +1,0 @@
-parameters:
-    ignoreErrors:
-        # Ignore symfony/config possible null values
-        - '#Calling method .*Node\(\) on possibly null value of type#'
-        - '#expects Symfony\\.*\\ArrayNodeDefinition, Symfony\\.*\\ArrayNodeDefinition|Symfony\\.*\\NodeDefinition#'
-        - '#Call to an undefined method Symfony\\.*\\NodeParentInterface::scalarNode\(\)#'
-
-        # Ignore unexisting class used on purpose
-        - '#Lcobucci\\DependencyInjection\\Behat\\Tests\\Test#'
