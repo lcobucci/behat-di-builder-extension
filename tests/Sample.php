@@ -9,15 +9,8 @@ use Psr\Container\ContainerInterface;
 
 final class Sample implements Context
 {
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
-
-    /**
-     * @var Service
-     */
-    private $service;
+    private ContainerInterface $container;
+    private Service $service;
 
     /**
      * @AfterSuite

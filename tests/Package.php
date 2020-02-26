@@ -12,10 +12,7 @@ use Symfony\Component\DependencyInjection\Definition;
 
 final class Package implements CompilerPassListProvider
 {
-    /**
-     * @var string
-     */
-    private $name;
+    private string $name;
 
     public function __construct(string $name)
     {
@@ -31,10 +28,7 @@ final class Package implements CompilerPassListProvider
     {
         return new class ($this->name) implements CompilerPassInterface
         {
-            /**
-             * @var string
-             */
-            private $name;
+            private string $name;
 
             public function __construct(string $name)
             {
