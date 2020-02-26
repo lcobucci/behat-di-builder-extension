@@ -14,7 +14,7 @@
         "sort-packages": true
     },
     "require": {
-        "php": "^7.3",
+        "php": "^7.4",
         "behat/behat": "^3.4",
         "lcobucci/di-builder": "^5.6"
     },
