@@ -13,8 +13,14 @@ parameters:
 
     ignoreErrors:
         # Ignore symfony/config possible null values
-        - '#Cannot call method .*Node\(\) on .*|null#'
+        - '#Call to an undefined method Symfony\\.*::scalarNode\(\)#'
         - '#expects Symfony\\.*\\ArrayNodeDefinition, Symfony\\.*\\ArrayNodeDefinition|Symfony\\.*\\NodeDefinition#'
+
+        # Ignore behat/behat missing type declaration
+        - '#Method Lcobucci\\DependencyInjection\\Behat\\BuilderExtension::load\(\) has parameter \$config with no value type specified in iterable type array#'
+
+        # Ignore lcobucci/di-builder missing type declaration
+        - '#Method Lcobucci\\DependencyInjection\\Behat\\Tests\\Package::getCompilerPasses\(\) return type has no value type specified in iterable type Generator#'
 
         # Ignore unexisting class used on purpose
         - '#Lcobucci\\DependencyInjection\\Behat\\Tests\\Test#'
