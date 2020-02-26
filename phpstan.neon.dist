@@ -13,8 +13,5 @@ parameters:
         # Ignore behat/behat missing type declaration
         - '#Method Lcobucci\\DependencyInjection\\Behat\\BuilderExtension::load\(\) has parameter \$config with no value type specified in iterable type array#'
 
-        # Ignore lcobucci/di-builder missing type declaration
-        - '#Method Lcobucci\\DependencyInjection\\Behat\\Tests\\Package::getCompilerPasses\(\) return type has no value type specified in iterable type Generator#'
-
         # Ignore unexisting class used on purpose
         - '#Lcobucci\\DependencyInjection\\Behat\\Tests\\Test#'
