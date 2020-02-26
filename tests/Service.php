@@ -5,15 +5,8 @@ namespace Lcobucci\DependencyInjection\Behat\Tests;
 
 final class Service
 {
-    /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $mode;
+    private string $name;
+    private string $mode;
 
     public function __construct(string $name, string $mode)
     {
