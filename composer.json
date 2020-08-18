@@ -19,7 +19,7 @@
         "lcobucci/di-builder": "^5.8"
     },
     "require-dev": {
-        "lcobucci/coding-standard": "^4.0",
+        "lcobucci/coding-standard": "^6.0",
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-deprecation-rules": "^0.12",
