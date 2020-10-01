@@ -36,10 +36,5 @@
         "psr-4": {
             "Lcobucci\\DependencyInjection\\Behat\\Tests\\": "tests"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.1.x-dev"
-        }
     }
 }
