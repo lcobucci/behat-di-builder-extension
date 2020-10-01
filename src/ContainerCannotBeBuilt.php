@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Lcobucci\DependencyInjection\Behat;
 
 use RuntimeException;
+
 use function sprintf;
 
 final class ContainerCannotBeBuilt extends RuntimeException

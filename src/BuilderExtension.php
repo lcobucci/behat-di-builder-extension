@@ -12,6 +12,7 @@ use Symfony\Component\DependencyInjection\Definition;
 
 final class BuilderExtension implements Extension
 {
+    // phpcs:ignore SlevomatCodingStandard.Functions.UnusedParameter
     public function process(ContainerBuilder $container): void
     {
     }
@@ -21,6 +22,7 @@ final class BuilderExtension implements Extension
         return __NAMESPACE__;
     }
 
+    // phpcs:ignore SlevomatCodingStandard.Functions.UnusedParameter
     public function initialize(ExtensionManager $extensionManager): void
     {
     }
@@ -51,9 +53,7 @@ final class BuilderExtension implements Extension
         );
     }
 
-    /**
-     * @param array<string, mixed> $packages
-     */
+    /** @param array<string, mixed> $packages */
     private function createContainerDefinition(array $packages, ?string $builderFile = null): Definition
     {
         $definition = new Definition(ContainerInterface::class, [$packages, $builderFile]);

@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerInterface as SFContainer;
+
 use function dirname;
 
 final class ContainerFactoryTest extends TestCase
@@ -64,11 +65,12 @@ final class ContainerFactoryTest extends TestCase
      * @covers \Lcobucci\DependencyInjection\Behat\ContainerFactory
      * @covers \Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt
      */
-    public function createContainerShouldThownAnExceptionWhenPackageListHasInvalidClasses(): void
+    public function createContainerShouldThrownAnExceptionWhenPackageListHasInvalidClasses(): void
     {
         $this->expectException(ContainerCannotBeBuilt::class);
         $this->expectExceptionMessage('The package class "' . Test::class . '" could not be loaded, is it correct?');
 
+        // @phpstan-ignore-next-line this class doesn't exist and can safely be ignored
         ContainerFactory::createContainer([Test::class => []]);
     }
 
@@ -78,7 +80,7 @@ final class ContainerFactoryTest extends TestCase
      * @covers \Lcobucci\DependencyInjection\Behat\ContainerFactory
      * @covers \Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt
      */
-    public function createContainerShouldThownAnExceptionBuilderFileIsNotReadable(): void
+    public function createContainerShouldThrownAnExceptionBuilderFileIsNotReadable(): void
     {
         $file = __DIR__ . '/test.php';
 

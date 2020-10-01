@@ -1,21 +1,18 @@
 # lcobucci/di-builder extension for behat
 
-[![Total Downloads](https://img.shields.io/packagist/dt/lcobucci/behat-di-builder-extension.svg?style=flat-square)](https://packagist.org/packages/lcobucci/behat-di-builder-extension)
-[![Latest Stable Version](https://img.shields.io/packagist/v/lcobucci/behat-di-builder-extension.svg?style=flat-square)](https://packagist.org/packages/lcobucci/behat-di-builder-extension)
-[![Unstable Version](https://img.shields.io/packagist/vpre/lcobucci/behat-di-builder-extension.svg?style=flat-square)](https://packagist.org/packages/lcobucci/behat-di-builder-extension)
+[![Total Downloads]](https://packagist.org/packages/lcobucci/behat-di-builder-extension)
+[![Latest Stable Version]](https://packagist.org/packages/lcobucci/behat-di-builder-extension)
+[![Unstable Version]](https://packagist.org/packages/lcobucci/behat-di-builder-extension)
 
-![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/lcobucci/behat-di-builder-extension/master.svg?style=flat-square)](http://travis-ci.org/#!/lcobucci/behat-di-builder-extension)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/lcobucci/behat-di-builder-extension/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/lcobucci/behat-di-builder-extension/?branch=master)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/lcobucci/behat-di-builder-extension/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/lcobucci/behat-di-builder-extension/?branch=master)
+[![Build Status]](https://github.com/lcobucci/behat-di-builder-extension/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3Amaster)
+[![Code Coverage]](https://codecov.io/gh/lcobucci/behat-di-builder-extension)
 
 Allows injecting services from a container created using [`lcobucci/di-builder`](http://packagist.org/packages/lcobucci/di-builder)
 in a Behat context.
 
 ## Installation
 
-Package is available on [Packagist](http://packagist.org/packages/lcobucci/behat-di-builder-extension),
-you can install it using [Composer](http://getcomposer.org).
+Package is available on [Packagist], you can install it using [Composer].
 
 ```shell
 composer require --dev lcobucci/behat-di-builder-extension
@@ -90,3 +87,11 @@ default:
           - "one"
           - "two"
 ```
+
+[Total Downloads]: https://img.shields.io/packagist/dt/lcobucci/behat-di-builder-extension.svg?style=flat-square
+[Latest Stable Version]: https://img.shields.io/packagist/v/lcobucci/behat-di-builder-extension.svg?style=flat-square
+[Unstable Version]: https://img.shields.io/packagist/vpre/lcobucci/behat-di-builder-extension.svg?style=flat-square
+[Build Status]: https://img.shields.io/github/workflow/status/lcobucci/behat-di-builder-extension/PHPUnit%20tests/master?style=flat-square
+[Code Coverage]: https://codecov.io/gh/lcobucci/behat-di-builder-extension/branch/master/graph/badge.svg
+[Packagist]: http://packagist.org/packages/lcobucci/behat-di-builder-extension
+[Composer]: http://getcomposer.org
