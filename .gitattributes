@@ -1,7 +1,6 @@
 /config export-ignore
 /features export-ignore
 /tests export-ignore
-/.scrutinizer.yml export-ignore
 /behat.yml export-ignore
 /*.dist export-ignore
 /README.md export-ignore
