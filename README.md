@@ -4,7 +4,7 @@
 [![Latest Stable Version]](https://packagist.org/packages/lcobucci/behat-di-builder-extension)
 [![Unstable Version]](https://packagist.org/packages/lcobucci/behat-di-builder-extension)
 
-[![Build Status]](https://github.com/lcobucci/behat-di-builder-extension/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3A1.1.x)
+[![Build Status]](https://github.com/lcobucci/behat-di-builder-extension/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3A1.2.x)
 [![Code Coverage]](https://codecov.io/gh/lcobucci/behat-di-builder-extension)
 
 Allows injecting services from a container created using [`lcobucci/di-builder`](http://packagist.org/packages/lcobucci/di-builder)
@@ -91,7 +91,7 @@ default:
 [Total Downloads]: https://img.shields.io/packagist/dt/lcobucci/behat-di-builder-extension.svg?style=flat-square
 [Latest Stable Version]: https://img.shields.io/packagist/v/lcobucci/behat-di-builder-extension.svg?style=flat-square
 [Unstable Version]: https://img.shields.io/packagist/vpre/lcobucci/behat-di-builder-extension.svg?style=flat-square
-[Build Status]: https://img.shields.io/github/workflow/status/lcobucci/behat-di-builder-extension/PHPUnit%20tests/1.1.x?style=flat-square
-[Code Coverage]: https://codecov.io/gh/lcobucci/behat-di-builder-extension/branch/1.1.x/graph/badge.svg
+[Build Status]: https://img.shields.io/github/workflow/status/lcobucci/behat-di-builder-extension/PHPUnit%20tests/1.2.x?style=flat-square
+[Code Coverage]: https://codecov.io/gh/lcobucci/behat-di-builder-extension/branch/1.2.x/graph/badge.svg
 [Packagist]: http://packagist.org/packages/lcobucci/behat-di-builder-extension
 [Composer]: http://getcomposer.org
