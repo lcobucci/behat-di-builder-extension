@@ -1,7 +1,7 @@
 {
     "name": "lcobucci/behat-di-builder-extension",
-    "description": "A behat extension that allows injecting services from a container created with lcobucci/di-builder in contexts",
     "type": "library",
+    "description": "A behat extension that allows injecting services from a container created with lcobucci/di-builder in contexts",
     "license": "MIT",
     "authors": [
         {
@@ -9,10 +9,6 @@
             "email": "lcobucci@gmail.com"
         }
     ],
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
     "require": {
         "php": "^7.4 || ^8.0",
         "behat/behat": "^3.8",
@@ -26,6 +22,10 @@
         "phpstan/phpstan-phpunit": "^0.12",
         "phpstan/phpstan-strict-rules": "^0.12",
         "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
