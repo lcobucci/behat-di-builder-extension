@@ -105,7 +105,7 @@ jobs:
         run: "make phpunit PHPUNIT_FLAGS=--coverage-clover=coverage.xml"
 
       - name: "Upload Code Coverage"
-        uses: "codecov/codecov-action@v1.5.0"
+        uses: "codecov/codecov-action@v1.5.2"
 
   phpunit-rc:
     name: "PHPUnit tests on PHP 8"
