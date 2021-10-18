@@ -49,7 +49,7 @@ final class BuilderExtension implements Extension
     {
         $container->setDefinition(
             $config['name'],
-            $this->createContainerDefinition($config['packages'], $config['container_builder'])
+            $this->createContainerDefinition($config['packages'], $config['container_builder']),
         );
     }
 
