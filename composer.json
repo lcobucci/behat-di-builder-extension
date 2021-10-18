@@ -12,7 +12,7 @@
     "require": {
         "php": "^8.0",
         "behat/behat": "^3.9",
-        "lcobucci/di-builder": "^7.0"
+        "lcobucci/di-builder": "^7.1"
     },
     "require-dev": {
         "lcobucci/coding-standard": "^8.0",

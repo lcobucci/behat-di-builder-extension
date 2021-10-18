@@ -32,7 +32,7 @@ final class ContainerFactory
     private static function createBuilder(?string $builderFile): Builder
     {
         if ($builderFile === null) {
-            return ContainerBuilder::default(__FILE__, 'MyApp');
+            return ContainerBuilder::xml(__FILE__, 'MyApp');
         }
 
         if (! is_readable($builderFile)) {
