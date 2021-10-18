@@ -1,7 +1,7 @@
 PARALLELISM := $(shell nproc)
 
 .PHONY: all
-all: install phpcbf phpcs phpstan phpunit
+all: install phpcbf phpcs phpstan phpunit behat
 
 .PHONY: install
 install: vendor/composer/installed.json
@@ -13,6 +13,10 @@ vendor/composer/installed.json: composer.json composer.lock
 .PHONY: phpunit
 phpunit:
 	@vendor/bin/phpunit $(PHPUNIT_FLAGS)
+
+.PHONY: behat
+behat:
+	@vendor/bin/behat
 
 .PHONY: phpcbf
 phpcbf:
