@@ -20,10 +20,10 @@ behat:
 
 .PHONY: phpcbf
 phpcbf:
-	@vendor/bin/phpcbf --parallel=$(PARALLELISM)
+	@vendor/bin/phpcbf --parallel=$(PARALLELISM) || true
 
 .PHONY: phpcs
-phpcs:
+phpcs: | phpcbf
 	@vendor/bin/phpcs --parallel=$(PARALLELISM) $(PHPCS_FLAGS)
 
 .PHONY: phpstan
