@@ -34,12 +34,12 @@ final class BuilderExtension implements Extension
                 ->scalarNode('name')
                     ->defaultValue('test_container')
                 ->end()
-                ->scalarNode('container_builder')
+                ?->scalarNode('container_builder')
                     ->defaultNull()
                 ->end()
-                ->arrayNode('packages')
+                ?->arrayNode('packages')
                     ->arrayPrototype()->ignoreExtraKeys(false)->end()
-                ->end()
+                ?->end()
             ->end()
         ->end();
     }
@@ -49,7 +49,7 @@ final class BuilderExtension implements Extension
     {
         $container->setDefinition(
             $config['name'],
-            $this->createContainerDefinition($config['packages'], $config['container_builder'])
+            $this->createContainerDefinition($config['packages'], $config['container_builder']),
         );
     }
 

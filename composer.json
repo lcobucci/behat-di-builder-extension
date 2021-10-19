@@ -10,12 +10,12 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
-        "behat/behat": "^3.8",
-        "lcobucci/di-builder": "^7.0"
+        "php": "^8.0",
+        "behat/behat": "^3.9",
+        "lcobucci/di-builder": "^7.1"
     },
     "require-dev": {
-        "lcobucci/coding-standard": "^6.0",
+        "lcobucci/coding-standard": "^8.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-deprecation-rules": "^0.12",

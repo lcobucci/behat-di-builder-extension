@@ -5,13 +5,8 @@ namespace Lcobucci\DependencyInjection\Behat\Tests;
 
 final class Service
 {
-    private string $name;
-    private string $mode;
-
-    public function __construct(string $name, string $mode)
+    public function __construct(private string $name, private string $mode)
     {
-        $this->name = $name;
-        $this->mode = $mode;
     }
 
     public function isWorking(string $expectedName, string $expectedMode): bool

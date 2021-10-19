@@ -9,12 +9,10 @@ use Psr\Container\ContainerInterface;
 
 final class Sample implements Context
 {
-    private ContainerInterface $container;
     private Service $service;
 
-    public function __construct(ContainerInterface $container)
+    public function __construct(private ContainerInterface $container)
     {
-        $this->container = $container;
     }
 
     /** @AfterSuite */

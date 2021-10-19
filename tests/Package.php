@@ -12,11 +12,8 @@ use Symfony\Component\DependencyInjection\Definition;
 
 final class Package implements CompilerPassListProvider
 {
-    private string $name;
-
-    public function __construct(string $name)
+    public function __construct(private string $name)
     {
-        $this->name = $name;
     }
 
     public function getCompilerPasses(): Generator
@@ -28,11 +25,8 @@ final class Package implements CompilerPassListProvider
     {
         return new class ($this->name) implements CompilerPassInterface
         {
-            private string $name;
-
-            public function __construct(string $name)
+            public function __construct(private string $name)
             {
-                $this->name = $name;
             }
 
             public function process(ContainerBuilder $container): void

@@ -39,7 +39,7 @@ final class ContainerFactoryTest extends TestCase
                 ContainerInterface::class,
                 SFContainer::class,
             ],
-            $container->getServiceIds()
+            $container->getServiceIds(),
         );
     }
 
@@ -52,7 +52,7 @@ final class ContainerFactoryTest extends TestCase
     {
         $container = ContainerFactory::createContainer(
             [Package::class => ['we']],
-            dirname(__DIR__) . '/config/container_builder.php'
+            dirname(__DIR__) . '/config/container_builder.php',
         );
 
         self::assertInstanceOf(Service::class, $container->get('dynamic'));
