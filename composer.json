@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "behat/behat": "^3.9",
+        "behat/behat": "^3.10",
         "lcobucci/di-builder": "^7.1"
     },
     "require-dev": {
