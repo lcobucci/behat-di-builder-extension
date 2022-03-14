@@ -7,6 +7,8 @@ use Behat\Behat\Context\Context;
 use PHPUnit\Framework\Assert;
 use Psr\Container\ContainerInterface;
 
+use function assert;
+
 final class Sample implements Context
 {
     private Service $service;
@@ -28,10 +30,17 @@ final class Sample implements Context
         Assert::assertTrue($this->container->has('fixed'));
     }
 
-    /** @When I instantiate the service :service */
+    /**
+     * @When I instantiate the service :service
+     *
+     * @param class-string<Service> $service
+     */
     public function iInstantiateTheService(string $service): void
     {
-        $this->service = $this->container->get($service);
+        $instance = $this->container->get($service);
+        assert($instance instanceof Service);
+
+        $this->service = $instance;
     }
 
     /** @Then the service should work using :name and :mode as values */

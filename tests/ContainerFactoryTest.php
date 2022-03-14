@@ -6,9 +6,7 @@ namespace Lcobucci\DependencyInjection\Behat\Tests;
 use Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt;
 use Lcobucci\DependencyInjection\Behat\ContainerFactory;
 use PHPUnit\Framework\TestCase;
-use Psr\Container\ContainerInterface;
 use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\DependencyInjection\ContainerInterface as SFContainer;
 
 use function dirname;
 
@@ -33,14 +31,7 @@ final class ContainerFactoryTest extends TestCase
         $container = ContainerFactory::createContainer([]);
 
         self::assertInstanceOf(Container::class, $container);
-        self::assertSame(
-            [
-                'service_container',
-                ContainerInterface::class,
-                SFContainer::class,
-            ],
-            $container->getServiceIds(),
-        );
+        self::assertSame(['service_container'], $container->getServiceIds());
     }
 
     /**
