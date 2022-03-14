@@ -13,7 +13,7 @@ use function is_readable;
 
 final class ContainerFactory
 {
-    /** @param array<class-string<Package>, mixed> $packages */
+    /** @param array<class-string<Package>, list<mixed>> $packages */
     public static function createContainer(array $packages, ?string $builderFile = null): ContainerInterface
     {
         $builder = self::createBuilder($builderFile);
