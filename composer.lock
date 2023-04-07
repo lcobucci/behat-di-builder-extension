@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a35081f9544ed646e3c52fa756df34f9",
+    "content-hash": "e872f39883fd552d4a698dac00bacb43",
     "packages": [
         {
             "name": "behat/behat",
@@ -207,16 +207,16 @@
         },
         {
             "name": "lcobucci/di-builder",
-            "version": "7.2.1",
+            "version": "7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/di-builder.git",
-                "reference": "f260e88edb3d185c7540bf27f47bb8b9f20e8f2e"
+                "reference": "4e9ec1f2f7018237492bbf89e9947469a259613b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/di-builder/zipball/f260e88edb3d185c7540bf27f47bb8b9f20e8f2e",
-                "reference": "f260e88edb3d185c7540bf27f47bb8b9f20e8f2e",
+                "url": "https://api.github.com/repos/lcobucci/di-builder/zipball/4e9ec1f2f7018237492bbf89e9947469a259613b",
+                "reference": "4e9ec1f2f7018237492bbf89e9947469a259613b",
                 "shasum": ""
             },
             "require": {
@@ -272,7 +272,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lcobucci/di-builder/issues",
-                "source": "https://github.com/lcobucci/di-builder/tree/7.2.1"
+                "source": "https://github.com/lcobucci/di-builder/tree/7.2.2"
             },
             "funding": [
                 {
@@ -284,7 +284,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-02-22T20:39:12+00:00"
+            "time": "2023-04-03T21:03:39+00:00"
         },
         {
             "name": "psr/cache",
@@ -490,16 +490,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v6.2.7",
+            "version": "v6.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "01a36b32f930018764bcbde006fbbe421fa6b61e"
+                "reference": "76babfd82f6bfd8f6cbe851a153b95dd074ffc53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/01a36b32f930018764bcbde006fbbe421fa6b61e",
-                "reference": "01a36b32f930018764bcbde006fbbe421fa6b61e",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/76babfd82f6bfd8f6cbe851a153b95dd074ffc53",
+                "reference": "76babfd82f6bfd8f6cbe851a153b95dd074ffc53",
                 "shasum": ""
             },
             "require": {
@@ -566,7 +566,7 @@
                 "psr6"
             ],
             "support": {
-                "source": "https://github.com/symfony/cache/tree/v6.2.7"
+                "source": "https://github.com/symfony/cache/tree/v6.2.8"
             },
             "funding": [
                 {
@@ -582,7 +582,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-21T16:15:44+00:00"
+            "time": "2023-03-30T07:37:32+00:00"
         },
         {
             "name": "symfony/cache-contracts",
@@ -838,16 +838,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v6.2.7",
+            "version": "v6.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "83369dd4ec84bba9673524d25b79dfbde9e6e84c"
+                "reference": "b6195feacceb88fc58a02b69522b569e4c6188ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/83369dd4ec84bba9673524d25b79dfbde9e6e84c",
-                "reference": "83369dd4ec84bba9673524d25b79dfbde9e6e84c",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/b6195feacceb88fc58a02b69522b569e4c6188ac",
+                "reference": "b6195feacceb88fc58a02b69522b569e4c6188ac",
                 "shasum": ""
             },
             "require": {
@@ -905,7 +905,7 @@
             "description": "Allows you to standardize and centralize the way objects are constructed in your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dependency-injection/tree/v6.2.7"
+                "source": "https://github.com/symfony/dependency-injection/tree/v6.2.8"
             },
             "funding": [
                 {
@@ -921,7 +921,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-16T14:11:02+00:00"
+            "time": "2023-03-30T13:35:57+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1960,16 +1960,16 @@
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v6.2.7",
+            "version": "v6.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
-                "reference": "86062dd0103530e151588c8f60f5b85a139f1442"
+                "reference": "8302bb670204500d492c6b8c595ee9a27da62cd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/86062dd0103530e151588c8f60f5b85a139f1442",
-                "reference": "86062dd0103530e151588c8f60f5b85a139f1442",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/8302bb670204500d492c6b8c595ee9a27da62cd6",
+                "reference": "8302bb670204500d492c6b8c595ee9a27da62cd6",
                 "shasum": ""
             },
             "require": {
@@ -2009,12 +2009,12 @@
                 "export",
                 "hydrate",
                 "instantiate",
-                "lazy loading",
+                "lazy-loading",
                 "proxy",
                 "serialize"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-exporter/tree/v6.2.7"
+                "source": "https://github.com/symfony/var-exporter/tree/v6.2.8"
             },
             "funding": [
                 {
@@ -2030,7 +2030,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-24T10:42:00+00:00"
+            "time": "2023-03-14T15:48:45+00:00"
         },
         {
             "name": "symfony/yaml",
