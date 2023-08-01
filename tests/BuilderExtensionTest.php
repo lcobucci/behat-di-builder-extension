@@ -6,19 +6,17 @@ namespace Lcobucci\DependencyInjection\Behat\Tests;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
 use Lcobucci\DependencyInjection\Behat\BuilderExtension;
 use Lcobucci\DependencyInjection\Behat\ContainerFactory;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
+#[PHPUnit\CoversClass(BuilderExtension::class)]
 final class BuilderExtensionTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\BuilderExtension::process
-     */
+    #[PHPUnit\Test]
     public function processShouldNotDoAnything(): void
     {
         $builder = new ContainerBuilder();
@@ -29,11 +27,7 @@ final class BuilderExtensionTest extends TestCase
         self::assertEquals(new ContainerBuilder(), $builder);
     }
 
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\BuilderExtension::initialize
-     */
+    #[PHPUnit\Test]
     public function initializeShouldNotDoAnything(): void
     {
         $extensionManager = new ExtensionManager([]);
@@ -44,11 +38,7 @@ final class BuilderExtensionTest extends TestCase
         self::assertEquals(new ExtensionManager([]), $extensionManager);
     }
 
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\BuilderExtension::getConfigKey
-     */
+    #[PHPUnit\Test]
     public function getConfigKeyShouldSimplyReturnTheClassNamespace(): void
     {
         $extension = new BuilderExtension();
@@ -56,11 +46,7 @@ final class BuilderExtensionTest extends TestCase
         self::assertSame('Lcobucci\DependencyInjection\Behat', $extension->getConfigKey());
     }
 
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\BuilderExtension::configure
-     */
+    #[PHPUnit\Test]
     public function configureGenerateAValidConfiguration(): void
     {
         $extension   = new BuilderExtension();
@@ -74,12 +60,7 @@ final class BuilderExtensionTest extends TestCase
         self::assertSame(['name' => 'test_container', 'container_builder' => null, 'packages' => []], $config);
     }
 
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\BuilderExtension::load
-     * @covers \Lcobucci\DependencyInjection\Behat\BuilderExtension::createContainerDefinition
-     */
+    #[PHPUnit\Test]
     public function loadShouldAppendADefinitionForTheDIContainer(): void
     {
         $sfBuilder = new ContainerBuilder();

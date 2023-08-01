@@ -5,27 +5,24 @@ namespace Lcobucci\DependencyInjection\Behat\Tests;
 
 use Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt;
 use Lcobucci\DependencyInjection\Behat\ContainerFactory;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 
 use function dirname;
 
+#[PHPUnit\CoversClass(ContainerFactory::class)]
+#[PHPUnit\CoversClass(ContainerCannotBeBuilt::class)]
 final class ContainerFactoryTest extends TestCase
 {
-    /**
-     * @before
-     * @after
-     */
+    #[PHPUnit\Before]
+    #[PHPUnit\After]
     public function removeBuiltContainer(): void
     {
         TestContainerRemover::remove();
     }
 
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\ContainerFactory
-     */
+    #[PHPUnit\Test]
     public function createContainerShouldBuildATestContainerWithOneServiceWhenNoPackageAndNoConfigFileIsGiven(): void
     {
         $container = ContainerFactory::createContainer([]);
@@ -34,11 +31,7 @@ final class ContainerFactoryTest extends TestCase
         self::assertSame(['service_container'], $container->getServiceIds());
     }
 
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\ContainerFactory
-     */
+    #[PHPUnit\Test]
     public function createContainerShouldBeReturnAContainerWithAllRegisteredPackages(): void
     {
         $container = ContainerFactory::createContainer(
@@ -50,12 +43,7 @@ final class ContainerFactoryTest extends TestCase
         self::assertInstanceOf(Service::class, $container->get('fixed'));
     }
 
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\ContainerFactory
-     * @covers \Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt
-     */
+    #[PHPUnit\Test]
     public function createContainerShouldThrownAnExceptionWhenPackageListHasInvalidClasses(): void
     {
         $this->expectException(ContainerCannotBeBuilt::class);
@@ -65,12 +53,7 @@ final class ContainerFactoryTest extends TestCase
         ContainerFactory::createContainer([Test::class => []]);
     }
 
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\DependencyInjection\Behat\ContainerFactory
-     * @covers \Lcobucci\DependencyInjection\Behat\ContainerCannotBeBuilt
-     */
+    #[PHPUnit\Test]
     public function createContainerShouldThrownAnExceptionBuilderFileIsNotReadable(): void
     {
         $file = __DIR__ . '/test.php';
