@@ -10,8 +10,5 @@ parameters:
         - '#Call to an undefined method Symfony\\.*::scalarNode\(\)#'
         - '#expects Symfony\\.*\\ArrayNodeDefinition, Symfony\\.*\\ArrayNodeDefinition|Symfony\\.*\\NodeDefinition#'
 
-        # Ignore behat/behat missing type declaration
-        - '#Method Lcobucci\\DependencyInjection\\Behat\\BuilderExtension::load\(\) has parameter \$config with no value type specified in iterable type array#'
-
         # Ignore non-existing class used on purpose
         - '#Lcobucci\\DependencyInjection\\Behat\\Tests\\Test#'

@@ -5,6 +5,7 @@ namespace Lcobucci\DependencyInjection\Behat;
 
 use Behat\Testwork\ServiceContainer\Extension;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
+use Lcobucci\DependencyInjection\Config\Package;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -48,12 +49,14 @@ final class BuilderExtension implements Extension
     public function load(ContainerBuilder $container, array $config): void
     {
         $container->setDefinition(
+            // @phpstan-ignore-next-line this is defined by Symfony's `ArrayNodeDefinition`
             $config['name'],
+            // @phpstan-ignore-next-line this is defined by Symfony's `ArrayNodeDefinition`
             $this->createContainerDefinition($config['packages'], $config['container_builder']),
         );
     }
 
-    /** @param array<string, mixed> $packages */
+    /** @param array<class-string<Package>, list<mixed>> $packages */
     private function createContainerDefinition(array $packages, ?string $builderFile = null): Definition
     {
         $definition = new Definition(ContainerInterface::class, [$packages, $builderFile]);
