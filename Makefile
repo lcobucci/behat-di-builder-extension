@@ -12,11 +12,11 @@ vendor/composer/installed.json: composer.json composer.lock
 
 .PHONY: phpunit
 phpunit:
-	@vendor/bin/phpunit $(PHPUNIT_FLAGS)
+	@php -d zend.assertions=1 vendor/bin/phpunit $(PHPUNIT_FLAGS)
 
 .PHONY: behat
 behat:
-	@vendor/bin/behat
+	@php -d zend.assertions=1 vendor/bin/behat
 
 .PHONY: phpcbf
 phpcbf:
@@ -28,5 +28,5 @@ phpcs: | phpcbf
 
 .PHONY: phpstan
 phpstan:
-	@vendor/bin/phpstan analyse
+	@php -d xdebug.mode=off vendor/bin/phpstan analyse
 
